@@ -6,7 +6,6 @@ The BMP280 is an absolute barometric pressure sensor especially designed for mob
 
 # Key features
 • Pressure range 300 … 1100 hPa (equiv. to +9000…-500 m above/below sea level)
- 
 • Package 8-pin LGA metal-lid Footprint : 2.0 × 2.5 mm², height: 0.95 mm
 • Relative accuracy ±0.12 hPa, equiv. to ±1 m (700 … 900hPa @25°C) 
 • Absolute accuracy typ. ±1 hPa (950 ...1050 hPa, 0 ...+40 °C) 
