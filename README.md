@@ -5,7 +5,8 @@
 The BMP280 is an absolute barometric pressure sensor especially designed for mobile applications.The emerging applications of indoor navigation, fitness as well as GPS refinement require a high relative accuracy and a low TCO at the same time. BMP180 and BMP280 are perfectly suitable for applications like floor detection since both sensors feature excellent relative accuracy is ±0.12 hPa, which is equivalent to ±1 m difference in altitude.
 
 # Key features
-• Pressure range 300 … 1100 hPa (equiv. to +9000…-500 m above/below sea level) 
+• Pressure range 300 … 1100 hPa (equiv. to +9000…-500 m above/below sea level)
+ 
 • Package 8-pin LGA metal-lid Footprint : 2.0 × 2.5 mm², height: 0.95 mm
 • Relative accuracy ±0.12 hPa, equiv. to ±1 m (700 … 900hPa @25°C) 
 • Absolute accuracy typ. ±1 hPa (950 ...1050 hPa, 0 ...+40 °C) 
