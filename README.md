@@ -52,6 +52,9 @@ The BMP280 is an absolute barometric pressure sensor especially designed for mob
 
 # New features to be added
 •	 * !SPI interface codes will be added in soon
+
 •	 * !Calculation method of altitude will be improved in soon
+
 •	 * !It will support with filters
+
 
