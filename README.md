@@ -56,5 +56,6 @@ The BMP280 is an absolute barometric pressure sensor especially designed for mob
 •	 * !Calculation method of altitude will be improved in soon
 
 •	 * !It will support with filters
+[Yazı içi linkiyim](https://www.google.com)
 
 
