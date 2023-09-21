@@ -45,9 +45,9 @@ The BMP280 is an absolute barometric pressure sensor especially designed for mob
 
 
 # Important links
-•	[BMP280 datasheet](https://html.alldatasheet.com/htmlpdf/1132069/BOSCH/BMP280/173/1/BMP280.html)
+•	[BMP280 datasheet](https://html.alldatasheet.com/html-pdf/1132069/BOSCH/BMP280/173/1/BMP280.html)
 
-•[Community support page]((https://community.bosch-sensortec.com/t5/Bosch-Sensortec-Community/ct-p/bst_community)https://community.bosch-sensortec.com/t5/Bosch-Sensortec-Community/ct-p/bst_community)
+•[Community support page](https://community.bosch-sensortec.com/t5/Bosch-Sensortec-Community/ct-p/bst_community)
 
 
 # New features to be added
