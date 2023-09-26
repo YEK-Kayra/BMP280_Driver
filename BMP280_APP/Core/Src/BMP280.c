@@ -57,14 +57,14 @@ void BMP280_Init(BMP280_HandleTypeDef *BMP280){
 
 	BMP280_Get_CalibrationDatas(BMP280);
 
-	BMP280->BMP280_CtrlMeas_Params_t = (BMP280->BMP280_Params.Oversampling_Temperature<<5) |
-			   	   	   	   	   	   	   (BMP280->BMP280_Params.Oversampling_Pressure<<2) |
-									   (BMP280->BMP280_Params.Mode<<0);
+    BMP280->BMP280_CtrlMeas_Params_t = (BMP280->BMP280_Params.Oversampling_Temperature<<5) |
+			   	       (BMP280->BMP280_Params.Oversampling_Pressure<<2) |
+				       (BMP280->BMP280_Params.Mode<<0);
 
 
-    BMP280->BMP280_Config_Params_t 	 = (BMP280->BMP280_Params.StandbyTime<<5) |
-			   	   	   	   	   	   	   (BMP280->BMP280_Params.Filter<<2) |
-									   (BMP280->BMP280_Params.CommunicationMode<<0);
+    BMP280->BMP280_Config_Params_t   = (BMP280->BMP280_Params.StandbyTime<<5) |
+			   	       (BMP280->BMP280_Params.Filter<<2) |
+				       (BMP280->BMP280_Params.CommunicationMode<<0);
 
 
     HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_CtrlMeas_REG, 1, &BMP280->BMP280_CtrlMeas_Params_t, 1, 1000);
@@ -192,7 +192,7 @@ double BMP280_Calculate_CompensatedPressure(BMP280_HandleTypeDef *BMP280, int32_
 	var1 = (((int64_t) 1 << 47) + var1) * ((int64_t) BMP280->dig_P1) >> 33;
 
 	if (var1 == 0) {
-		return 0;  // avoid exception caused by division by zero
+		return 0;  // Avoid exception caused by division by zero
 	}
 
 	p = 1048576 - RawPressure;
