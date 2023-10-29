@@ -29,7 +29,7 @@
 #define RawDataRegStartAddress	   0xF7
 #define TempRegStartAddress		   0xFA
 #define BMP280_Config_REG		   0xF5 	/*! bits: t_sb[7:5] ,filter[4:2] ,spi3w_en[0]  		   */
-#define BMP280_CtrlMeas_REG		   0xF4 	/*! bits: osrs_t[7:5] ,osrs_t[4:2] ,mode[1:0] 		   */
+#define BMP280_CtrlMeas_REG		   0xF4 	/*! bits: osrs_t[7:5] ,osrs_p[4:2] ,mode[1:0] 		   */
 #define BMP280_Status_REG		   0xF3 	/*! bits: measuring[3] ,im_update[0]  		    	   */
 #define BMP280_Reset_REG		   0xE0		/*! bits: reset[7:0] write 0xB6 into the reg for reset */
 
