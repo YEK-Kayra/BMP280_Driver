@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "BMP280.h"
+#include "BMP280.h"			//! We add BMP280's header file*/
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BMP280_I2C_DEV_ADDRESS  0xEC
+#define BMP280_I2C_DEV_ADDRESS  0xEC	//! BMP280's slave address to read and write */
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -43,9 +43,9 @@
 I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN PV */
-BMP280_HandleTypeDef BMP280;
+BMP280_HandleTypeDef BMP280;   //! We created a variable that we can reach BMP280's features */
 
-double BMP280_Pressure;
+double BMP280_Pressure;	       //! We created variables that we can keep values of BMP280's outputs */  
 double BMP280_Temperature;
 float  BMP280_Altitude;
 
@@ -95,12 +95,12 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-#ifdef BMP280_DEV
+#ifdef BMP280_DEV   						//! We check the BMP280 header file */ 
 
-  BMP280_Set_DefaultParams(&BMP280.BMP280_Params);
-  BMP280.BMP280_I2C_ADDRESS = BMP280_I2C_DEV_ADDRESS;
-  BMP280.i2c = &hi2c1;
-  BMP280_Init(&BMP280);
+  BMP280_Set_DefaultParams(&BMP280.BMP280_Params);		//! We determined BMP280's features. For instance Sampling rate,IRR filter coefficient etc. */
+  BMP280.BMP280_I2C_ADDRESS = BMP280_I2C_DEV_ADDRESS;		//! There is one I2C address to communicate */
+  BMP280.i2c = &hi2c1;	
+  BMP280_Init(&BMP280);						//! We start BMP280 Sensor after determined Default parameter and other settings*/
 
 #endif
 
@@ -111,7 +111,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+	// We will just use this function to get Temperature, Pressure, Altitude values from the sensor. 
 	BMP280_GetVal_TemperatureAndPressure(&BMP280, &BMP280_Temperature, &BMP280_Pressure, &BMP280_Altitude);
 
 
