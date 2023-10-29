@@ -43,12 +43,13 @@
 #include "math.h"
 
 
-float FixedAltitude;
-float TemporaryAltitude;
-
 /******************************************************************************/
 /*! @name        BMP280  Function prototypes            				*/
 /******************************************************************************/
+
+/**!These variable provide to calculate the altitude of BMP280 */
+float FixedAltitude;
+float TemporaryAltitude;
 
 
 void BMP280_Init(BMP280_HandleTypeDef *BMP280){
@@ -64,7 +65,7 @@ void BMP280_Init(BMP280_HandleTypeDef *BMP280){
 
     BMP280->BMP280_Config_Params_t 	 = (BMP280->BMP280_Params.StandbyTime<<5) |
 			   	   	   	   	   	   	   (BMP280->BMP280_Params.Filter<<2) |
-									   (BMP280->BMP280_Params.CommunicationMode<<0);
+									   (BMP280->BMP280_Params.CommunicationInterface<<0);
 
 
     HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_CtrlMeas_REG, 1, &BMP280->BMP280_CtrlMeas_Params_t, 1, 1000);
@@ -112,7 +113,7 @@ void BMP280_Get_CalibrationDatas(BMP280_HandleTypeDef *BMP280){
 
 void BMP280_Set_DefaultParams(BMP280_Params_t *BMP280_Params){
 
-	BMP280_Params->CommunicationMode = BMP280_I2C;
+	BMP280_Params->CommunicationInterface = BMP280_I2C;
 	BMP280_Params->Filter = BMP280_Filter_X16;
 	BMP280_Params->StandbyTime = BMP280_Standby_05;
 	BMP280_Params->Mode = BMP280_Mode_Normal;

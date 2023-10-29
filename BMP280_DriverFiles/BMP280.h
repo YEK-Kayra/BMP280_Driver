@@ -107,6 +107,7 @@ typedef enum {
 /******************************************************************************/
 /*!  @name         Structure Declarations                             */
 /******************************************************************************/
+
 typedef struct {
 
 	BMP280_Mode   Mode;
@@ -114,12 +115,14 @@ typedef struct {
 	BMP280_Oversampling Oversampling_Temperature;
 	BMP280_Filter Filter;
 	BMP280_StandbyTime StandbyTime;
-	BMP280_Communication CommunicationMode;
+	BMP280_Communication CommunicationInterface;
 
 }BMP280_Params_t;
 
+
 typedef struct {
 
+	/**!dig_T1 to dig_T3 and dig_P1 to dig_P9 are variable that we can save calibration parameters */
 	uint16_t dig_T1;
 	int16_t  dig_T2;
 	int16_t  dig_T3;
@@ -133,12 +136,17 @@ typedef struct {
 	int16_t dig_P8;
 	int16_t dig_P9;
 
-	I2C_HandleTypeDef *i2c;
-
 	BMP280_Params_t BMP280_Params;
 
 	uint16_t BMP280_I2C_ADDRESS;
+	I2C_HandleTypeDef *i2c;
 
+	/**! Each variable keep 2-3 data about its register.
+	 * 	 For instance "BMP280_Config_Params_t" contains that:
+	 * 														 BMP280_Params.StandbyTime
+	 * 														 BMP280_Params.Filter
+	 * 													     BMP280_Params.CommunicationInterface
+	 * */
 	uint8_t  BMP280_Config_Params_t;
 	uint8_t	 BMP280_CtrlMeas_Params_t;
     uint8_t  BMP280_Status;
