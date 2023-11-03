@@ -69,23 +69,23 @@ typedef enum{
 
 typedef enum {
 
-	BMP280_Skipped = 0,                 			/* no measurement */
+	BMP280_Skipped = 0,                 		/* no measurement */
 	BMP280_Ultra_Low_Power_Resolution = 1,         	/* oversampling x1 */
-	BMP280_Low_Power_Resolution = 2,				/* oversampling x2 */
-	BMP280_Standart_Resolution = 3, 				/* oversampling x4 */
-	BMP280_High_Resolution = 4,						/* oversampling x8 */
-	BMP280_Ultra_High_Resolution = 5 				/* oversampling x16 */
+	BMP280_Low_Power_Resolution = 2,		/* oversampling x2 */
+	BMP280_Standart_Resolution = 3, 		/* oversampling x4 */
+	BMP280_High_Resolution = 4,			/* oversampling x8 */
+	BMP280_Ultra_High_Resolution = 5 		/* oversampling x16 */
 
 }BMP280_Oversampling;
 
 
 typedef enum {
 
-	BMP280_Filter_OFF = 0,      /* no filter */
-	BMP280_Filter_X2  = 1,      /* filter coefficient : 2 */
-	BMP280_Filter_X4  = 2,		/* filter coefficient : 4 */
-	BMP280_Filter_X8  = 3,		/* filter coefficient : 8 */
-	BMP280_Filter_X16 = 4		/* filter coefficient : 16 */
+	BMP280_Filter_OFF = 0,      	 /* no filter */
+	BMP280_Filter_X2  = 1,     	 /* filter coefficient : 2 */
+	BMP280_Filter_X4  = 2,		 /* filter coefficient : 4 */
+	BMP280_Filter_X8  = 3,		 /* filter coefficient : 8 */
+	BMP280_Filter_X16 = 4		 /* filter coefficient : 16 */
 
 }BMP280_Filter;
 
@@ -142,14 +142,14 @@ typedef struct {
 	I2C_HandleTypeDef *i2c;
 
 	/**! Each variable keep 2-3 data about its register.
-	 * 	 For instance "BMP280_Config_Params_t" contains that:
-	 * 														 BMP280_Params.StandbyTime
-	 * 														 BMP280_Params.Filter
-	 * 													     BMP280_Params.CommunicationInterface
+	 *  For instance "BMP280_Config_Params_t" contains that:
+	 * 							 BMP280_Params.StandbyTime
+	 * 							 BMP280_Params.Filter
+	 * 							 BMP280_Params.CommunicationInterface
 	 * */
 	uint8_t  BMP280_Config_Params_t;
 	uint8_t	 BMP280_CtrlMeas_Params_t;
-    uint8_t  BMP280_Status;
+        uint8_t  BMP280_Status;
 
 
 
@@ -157,7 +157,7 @@ typedef struct {
 
 
 /******************************************************************************/
-/*         			BMP280 Function prototypes            				*/
+/*         			BMP280 Function prototypes            	*/
 /******************************************************************************/
 
 /**
@@ -193,7 +193,7 @@ void BMP280_Init(BMP280_HandleTypeDef *BMP280);
  * @param    *BMP280
  * @return   boolean number according to sensor status
  * @retval   '1' : The values are ready to get from BMP280
- * 			 '0' : The values are not ready to get from BMP280 and it will wait until sensor is ready
+ * 	     '0' : The values are not ready to get from BMP280 and it will wait until sensor is ready
  */
 bool BMP280_Control_Status(BMP280_HandleTypeDef *BMP280);
 
@@ -202,14 +202,14 @@ bool BMP280_Control_Status(BMP280_HandleTypeDef *BMP280);
 /**
  * @fn      double BMP280_GetVal_TemperatureAndPressure(BMP280_HandleTypeDef *BMP280, double *BMP280_Temperature, double *BMP280_Pressure)
  * @brief   Read rawValues for Temperature and Pressure from BMP280's chip registers.
- * 			 And it is sent raw values to other function to calculate their real values
+ * 	    And it is sent raw values to other function to calculate their real values
  *
  * @param   *BMP280
  * @param   *BMP280_Temperature
  * @param   *BMP280_Pressure
  * @return  boolean number according to sensor status
  * @retval  '1' : The values are ready to get from BMP280
- * 			'0' : The values are not ready to get from BMP280 and it will wait until sensor is ready
+ * 	    '0' : The values are not ready to get from BMP280 and it will wait until sensor is ready
  */
 bool BMP280_GetVal_TemperatureAndPressure(BMP280_HandleTypeDef *BMP280, double *BMP280_Temperature, double *BMP280_Pressure, float *BMP280_Altitude);
 
@@ -220,7 +220,7 @@ bool BMP280_GetVal_TemperatureAndPressure(BMP280_HandleTypeDef *BMP280, double *
  * @param   *BMP280
  * @param   RawTemperature
  * @param   *TempVarTotel
- * @return 	Compensated Temperature
+ * @return  Compensated Temperature
  */
 double BMP280_Calculate_CompensatedTemperature(BMP280_HandleTypeDef *BMP280, int32_t RawTemperature, int32_t *TempVarTotel);
 
@@ -243,4 +243,3 @@ double BMP280_Calculate_CompensatedPressure(BMP280_HandleTypeDef *BMP280, int32_
 float BMP280_Calculate_Altitude(double *BMP280_Pressure);
 
 #endif /* INC_BMP280_H_ */
-
