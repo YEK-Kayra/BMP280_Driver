@@ -1,9 +1,9 @@
 /*!
  *  @file : BMP280.c
  *  @date : 8-10-2023
- *  @version : v1.0.0
  *
- *      Author: Yunus Emre KAYRA (https://github.com/YEK-Kayra)
+ *
+ *  @Author: Yunus Emre KAYRA (https://github.com/YEK-Kayra)
  ******************************************************************************
  * 	@attention
  *

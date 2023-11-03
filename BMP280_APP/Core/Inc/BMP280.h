@@ -1,7 +1,7 @@
 /*!
  * BMP280.h
  *
- * Author: Yunus Emre KAYRA (github.com/YEK-Kayra)
+ * @Author: Yunus Emre KAYRA (github.com/YEK-Kayra)
  *
  * The MIT License (MIT)
  *
