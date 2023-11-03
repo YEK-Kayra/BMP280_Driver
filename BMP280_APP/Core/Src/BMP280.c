@@ -57,17 +57,18 @@ void BMP280_Init(BMP280_HandleTypeDef *BMP280){
 	BMP280_Get_CalibrationDatas(BMP280);
 
 	BMP280->BMP280_CtrlMeas_Params_t = (BMP280->BMP280_Params.Oversampling_Temperature<<5) |
-			   	   	   (BMP280->BMP280_Params.Oversampling_Pressure<<2) |
-					   (BMP280->BMP280_Params.Mode<<0);
+									   (BMP280->BMP280_Params.Oversampling_Pressure<<2) |
+					                   (BMP280->BMP280_Params.Mode<<0);
 
 
 	BMP280->BMP280_Config_Params_t 	 = (BMP280->BMP280_Params.StandbyTime<<5) |
-				   	   (BMP280->BMP280_Params.Filter<<2) |
-					   (BMP280->BMP280_Params.CommunicationInterface<<0);
+									   (BMP280->BMP280_Params.Filter<<2) |
+									   (BMP280->BMP280_Params.CommunicationInterface<<0);
 
 
-    	HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_CtrlMeas_REG, 1, &BMP280->BMP280_CtrlMeas_Params_t, 1, 1000);
-    	HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_Config_REG, 1, &BMP280->BMP280_Config_Params_t, 1, 1000);
+    HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_CtrlMeas_REG, 1, &BMP280->BMP280_CtrlMeas_Params_t, 1, 1000);
+    HAL_I2C_Mem_Write(BMP280->i2c, BMP280->BMP280_I2C_ADDRESS, BMP280_Config_REG, 1, &BMP280->BMP280_Config_Params_t, 1, 1000);
+
 
     for(int cnt = 0 ; cnt < 20 ; cnt++){
 
@@ -77,6 +78,7 @@ void BMP280_Init(BMP280_HandleTypeDef *BMP280){
     }
 
     FixedAltitude = TemporaryAltitude;
+
 }
 
 
@@ -159,7 +161,7 @@ bool BMP280_GetVal_TemperatureAndPressure(BMP280_HandleTypeDef *BMP280, double *
 float BMP280_Calculate_Altitude(double *BMP280_Pressure){
 
 	return ((SeaLevelTemp / GradientTemp) 
-		* (1 - pow((*BMP280_Pressure / SeaLevelPress),((GasCoefficient * GradientTemp)/GravityAccel)))-FixedAltitude);
+			* (1 - pow((*BMP280_Pressure / SeaLevelPress),((GasCoefficient * GradientTemp)/GravityAccel)))-FixedAltitude);
 
 }
 

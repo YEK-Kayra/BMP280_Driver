@@ -149,7 +149,7 @@ typedef struct {
 	 * */
 	uint8_t  BMP280_Config_Params_t;
 	uint8_t	 BMP280_CtrlMeas_Params_t;
-        uint8_t  BMP280_Status;
+    uint8_t  BMP280_Status;
 
 
 
