@@ -54,8 +54,6 @@ float TemporaryAltitude;
 
 void BMP280_Init(BMP280_HandleTypeDef *BMP280){
 
-
-
 	BMP280_Get_CalibrationDatas(BMP280);
 
 	BMP280->BMP280_CtrlMeas_Params_t = (BMP280->BMP280_Params.Oversampling_Temperature<<5) |
@@ -121,6 +119,8 @@ void BMP280_Set_DefaultParams(BMP280_Params_t *BMP280_Params){
 	BMP280_Params->Oversampling_Temperature = BMP280_Ultra_High_Resolution;
 
 }
+
+
 
 
 bool BMP280_GetVal_TemperatureAndPressure(BMP280_HandleTypeDef *BMP280, double *BMP280_Temperature, double *BMP280_Pressure, float *BMP280_Altitude){
