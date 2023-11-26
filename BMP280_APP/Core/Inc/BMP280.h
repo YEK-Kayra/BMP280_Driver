@@ -11,7 +11,7 @@
 
 #ifndef INC_BMP280_H_
 #define INC_BMP280_H_
-#define BMP280_DEV
+#define DEV_BMP280
 
 /****************************************************************/
 /*! @name       Header includes             */
