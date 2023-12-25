@@ -95,7 +95,7 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-#ifdef DEV_280
+#ifdef DEV_BMP280
 
   BMP280_Set_DefaultParams(&BMP280.BMP280_Params);
   BMP280.BMP280_I2C_ADDRESS = BMP280_I2C_DEV_ADDRESS;
