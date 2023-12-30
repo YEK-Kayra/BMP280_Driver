@@ -60,8 +60,8 @@ all: main-build
 main-build: BMP280_APP.elf secondary-outputs
 
 # Tool invocations
-BMP280_APP.elf BMP280_APP.map: $(OBJS) $(USER_OBJS) C:\Users\yunus\STM32CubeIDE\workspace_1.13.0\BMP280_APP\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BMP280_APP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\yunus\STM32CubeIDE\workspace_1.13.0\BMP280_APP\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMP280_APP.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BMP280_APP.elf BMP280_APP.map: $(OBJS) $(USER_OBJS) C:\Users\yunus\STM32CubeIDE\workspace_1.13.0\BMP280_Driver\BMP280_APP\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BMP280_APP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\yunus\STM32CubeIDE\workspace_1.13.0\BMP280_Driver\BMP280_APP\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMP280_APP.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

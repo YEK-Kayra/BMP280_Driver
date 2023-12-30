@@ -70,18 +70,18 @@ typedef enum{
 typedef enum {
 
 	BMP280_Skipped = 0,                 		/* no measurement */
-	BMP280_Ultra_Low_Power_Resolution = 1,         	/* oversampling x1 */
-	BMP280_Low_Power_Resolution = 2,		/* oversampling x2 */
-	BMP280_Standart_Resolution = 3, 		/* oversampling x4 */
-	BMP280_High_Resolution = 4,			/* oversampling x8 */
-	BMP280_Ultra_High_Resolution = 5 		/* oversampling x16 */
+	BMP280_Ultra_Low_Power_Resolution = 1,      /* oversampling x1 */
+	BMP280_Low_Power_Resolution = 2,		    /* oversampling x2 */
+	BMP280_Standart_Resolution = 3, 		    /* oversampling x4 */
+	BMP280_High_Resolution = 4,			        /* oversampling x8 */
+	BMP280_Ultra_High_Resolution = 5 		    /* oversampling x16 */
 
 }BMP280_Oversampling;
 
 
 typedef enum {
 
-	BMP280_Filter_OFF = 0,      	 /* no filter */
+	BMP280_Filter_OFF = 0,       /* no filter */
 	BMP280_Filter_X2  = 1,     	 /* filter coefficient : 2 */
 	BMP280_Filter_X4  = 2,		 /* filter coefficient : 4 */
 	BMP280_Filter_X8  = 3,		 /* filter coefficient : 8 */

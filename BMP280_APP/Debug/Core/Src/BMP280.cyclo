@@ -1,8 +1,8 @@
 ../Core/Src/BMP280.c:55:6:BMP280_Init	2
-../Core/Src/BMP280.c:83:6:BMP280_Get_CalibrationDatas	2
-../Core/Src/BMP280.c:112:6:BMP280_Set_DefaultParams	1
-../Core/Src/BMP280.c:126:6:BMP280_GetVal_TemperatureAndPressure	2
-../Core/Src/BMP280.c:159:7:BMP280_Calculate_Altitude	1
-../Core/Src/BMP280.c:166:8:BMP280_Calculate_CompensatedTemperature	1
-../Core/Src/BMP280.c:183:8:BMP280_Calculate_CompensatedPressure	2
-../Core/Src/BMP280.c:210:6:BMP280_Control_Status	2
+../Core/Src/BMP280.c:85:6:BMP280_Get_CalibrationDatas	2
+../Core/Src/BMP280.c:114:6:BMP280_Set_DefaultParams	1
+../Core/Src/BMP280.c:128:6:BMP280_GetVal_TemperatureAndPressure	2
+../Core/Src/BMP280.c:161:7:BMP280_Calculate_Altitude	1
+../Core/Src/BMP280.c:169:8:BMP280_Calculate_CompensatedTemperature	1
+../Core/Src/BMP280.c:186:8:BMP280_Calculate_CompensatedPressure	2
+../Core/Src/BMP280.c:213:6:BMP280_Control_Status	2
